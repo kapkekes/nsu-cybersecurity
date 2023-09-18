@@ -1,0 +1,36 @@
+[tool.poetry]
+name = "lab-01-sha-3-and-shake"
+version = "1.0.0"
+description = "A simple SHA-3 and SHAKE hash function family implementation."
+authors = ["Dmitriy Vashurin <kapkekes@yandex.ru>"]
+readme = "README.md"
+packages = [{include = "keccak"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.0.290"
+mypy = "^1.5.1"
+pytest = "^7.4.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+select = ["E", "F", "I", "Q"]
+line-length = 120
+
+[tool.ruff.flake8-quotes]
+inline-quotes = "double"
+multiline-quotes = "double"
+docstring-quotes = "double"
+avoid-escape = false
+
+[tool.ruff.per-file-ignores]
+"__init__.py" = ["F401"]
+
+[tool.pytest.ini_options]
+testpaths = ["benchmarks", "tests"]
+python_functions = ["benchmark_*", "test_*"]
