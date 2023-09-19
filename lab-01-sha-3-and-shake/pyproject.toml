@@ -13,6 +13,7 @@ python = "^3.11"
 ruff = "^0.0.290"
 mypy = "^1.5.1"
 pytest = "^7.4.2"
+pytest-benchmark = "^4.0.0"
 
 [build-system]
 requires = ["poetry-core"]
@@ -32,5 +33,5 @@ avoid-escape = false
 "__init__.py" = ["F401"]
 
 [tool.pytest.ini_options]
-testpaths = ["benchmarks", "tests"]
+testpaths = ["dev_suite"]
 python_functions = ["benchmark_*", "test_*"]
