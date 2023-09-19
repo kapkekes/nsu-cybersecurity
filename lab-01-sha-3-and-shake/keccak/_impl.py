@@ -154,11 +154,11 @@ class KeccakF1600:
         return bytes(result[:self._output_len_bytes])
 
     @classmethod
-    def shake128(cls, output_length_bytes: int) -> Self:
+    def shake_128(cls, output_length_bytes: int) -> Self:
         return cls(1344, 0x1F, output_length_bytes)
 
     @classmethod
-    def shake256(cls, output_length_bytes: int) -> Self:
+    def shake_256(cls, output_length_bytes: int) -> Self:
         return cls(1088, 0x1F, output_length_bytes)
 
     @classmethod
