@@ -1,0 +1,32 @@
+[tool.poetry]
+name = "lab-02-kuznyechik"
+version = "1.0.0"
+description = "A simple Kuznyechik block cipher (specified in GOST R 34.12-2015) implementation."
+authors = ["Dmitriy Vashurin <kapkekes@yandex.ru>"]
+readme = "README.md"
+packages = [{include = "kuznyechik"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.1.4"
+mypy = "^1.6.1"
+pytest = "^7.4.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+select = ["E", "F", "I", "Q"]
+line-length = 120
+
+[tool.ruff.flake8-quotes]
+inline-quotes = "double"
+multiline-quotes = "double"
+docstring-quotes = "double"
+avoid-escape = false
+
+[tool.ruff.per-file-ignores]
+"__init__.py" = ["F401"]
